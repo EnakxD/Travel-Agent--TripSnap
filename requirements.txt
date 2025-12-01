@@ -1,0 +1,4 @@
+# minimal requirements - add real OCR/ML libs if you integrate them later
+python-dateutil
+pytz
+reportlab      # optional, for PDF export in packager (used in stub)
