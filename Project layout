@@ -1,0 +1,17 @@
+travel-planner/
+├─ agents/
+│  ├─ image_parser.py
+│  ├─ task_extractor.py
+│  ├─ planner.py
+│  ├─ pricing.py
+│  └─ packager.py
+├─ services/
+│  └─ memory_bank.py
+├─ tools/
+│  ├─ ocr_tools.py
+│  └─ save_tools.py
+├─ orchestrator.py
+├─ main.py
+├─ requirements.txt
+└─ sample_inputs/
+   └─ (optional sample screenshots or .txt stubs)
