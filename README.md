@@ -70,12 +70,6 @@ How to run (quick)
 
 Save the files using the layout above.
 
-(Optional) create sample_inputs/sample1.txt with lines like:
-Riya: Let's go to Goa from 12 March to 15 March.
-Aman: ₹15000 per person is fine.
-Neha: We are 4 people.
-Riya: Beach and party preferred.
-
 Create & activate venv, install:
 python -m venv venv
 # linux/mac
@@ -87,21 +81,6 @@ pip install -r requirements.txt
 Run:
 python main.py --demo
 
-Notes & next steps (what to replace to make production-ready)
-
-OCR: replace ocr_image_stub with pytesseract.image_to_string() or Google Vision API for accurate OCR. Add a chat-bubble segmentation model to split messages properly from screenshots.
-
-Extraction: the TaskExtractionAgent is rule-based. For high accuracy, replace with an LLM prompt-based extractor (send transcript to LLM and ask it to return structured JSON). This yields far better date/location/budget parsing (handles messy natural language).
-
-Planning: replace PlanningAgent.build_itinerary with an LLM planner that reasons about time, distance, opening hours, and fatigue; or use a hybrid approach: LLM for semantic planning + heuristics for time/distance.
-
-Pricing: replace PricingAgent mock with calls to flight/hotel search APIs or run web.run (when allowed) to fetch real rates.
-
-Validation & Clarification: add a clarifying-question loop: if required info is missing, the system should ask the user (via UI) and update trip_info.
-
-Observability / Logging: add structured logs and counters per agent to show traceability for judges.
-
-Session & Memory: persist memory to a simple DB (sqlite) or memory bank across sessions for edits.
 UI: add Streamlit/Gradio front-end to upload images and present the itinerary. Include an "edit itinerary" flow.
 
 
